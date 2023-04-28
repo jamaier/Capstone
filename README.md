@@ -1,3 +1,72 @@
+## Capstone Proposal
+
+this application will use the following technologies:
+	- Nextjs
+	- Node
+	- MongoDB (Maybe MySQL)
+	- Tailwind CSS
+	- TypeScript
+
+  Posssibilities
+		* Redux (maybe)
+		* React Router (maybe)
+		* React Hooks (maybe)
+		* React Context (maybe)
+
+
+## Project MVP Features
+
+	- User Authentication
+	- POST / GET / PUT / DELETE functionality 
+	- User can create an account
+
+## Stretch Goals
+
+	- Error Handling 
+  - 
+
+# Time Tracking
+	4/28 - 
+		8:00 - 10:00: DB handling with Prisma w/MySQL or MogoDB
+		10:00 - 12:00: project setup
+		12:00 - 1:00: Lunch
+		1:00 - 3:00: Figma mockup attempt
+		3:00 - 5:00: project setup
+
+# Notes:
+
+DB
+	- Prisma?
+  - MongoDB
+	- Firebase?
+
+
+Look into Auth
+	- Auth0
+	- Clerk
+	- Firebase
+	- supabase
+	- planetscale
+
+Email API plans
+	- sendgrid
+	- mailgun
+
+UI
+	- tailwind
+	- chakra
+	- material ui
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
