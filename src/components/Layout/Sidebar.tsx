@@ -1,5 +1,7 @@
 import { BsBellFill, BsHouseFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
+
+
 import SidebarLogo from "./SidebarLogo";
 
 const Sidebar = () => {
@@ -7,17 +9,17 @@ const Sidebar = () => {
     {
       label: "Home",
       href: "/",
-      icon: BsHouseFill
+      icon: BsHouseFill,
     },
     {
-      label: 'Notifications',
-      href: '/notifications',
-      icon: BsBellFill
+      label: "Notifications",
+      href: "/notifications",
+      icon: BsBellFill,
     },
     {
       label: "Profile",
       href: "/profile",
-      icon: FaUser
+      icon: FaUser,
     },
   ];
 
@@ -25,7 +27,7 @@ const Sidebar = () => {
     <div>
       <SidebarLogo />
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar;

@@ -1,13 +1,14 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
+import { FaDev } from "react-icons/fa";
 
 const SidebarLogo = () => {
   const router = useRouter();
-  
-  return (
-    <div>
-      <p>sidebar logo</p>
-    </div>
-  )
-}
 
-export default SidebarLogo
+  return (
+    <div onClick={() => router.push("/")}>
+      <FaDev size={32} />
+    </div>
+  );
+};
+
+export default SidebarLogo;
