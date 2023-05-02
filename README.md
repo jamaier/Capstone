@@ -1,18 +1,19 @@
 ## Capstone Proposal
 
-this application will use the following technologies:
+### Description 
+
+Overall goal on the website is to create a social site devoted to developers of any skill level in a more collaborative way. A place to discuss and connect on projects
+being able to interact with other users, share projects, request and offer help on projects and collaborations. 
+
+### Technologies
+
 	- Nextjs
 	- Node
-	- MongoDB (Maybe MySQL)
+	- MongoDB
+	- Prisma
 	- Tailwind CSS
 	- TypeScript
-
-  Posssibilities
-		* Redux (maybe)
-		* React Router (maybe)
-		* React Hooks (maybe)
-		* React Context (maybe)
-
+	- NextAuth
 
 ## Project MVP Features
 
@@ -23,7 +24,14 @@ this application will use the following technologies:
 ## Stretch Goals
 
 	- Error Handling 
-  - 
+  - Add Users to follow
+	- Customize Profiles
+	- Add Following tags to certain topics
+	- Have dedicated page for help requests/offers
+	- Add images to posts
+	- Be able to like posts
+	- Add A learning section linking to lessons based on different subjects
+	- Order certain topics based on user interaction
 
 # Time Tracking
 	4/28 - 
