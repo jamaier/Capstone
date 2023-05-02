@@ -1,14 +1,13 @@
-import Sidebar from "./Layout/Sidebar";
+import React from 'react';
+import Sidebar from './Layout/Sidebar';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div>
+    <div className="h-screen bg-black">
       <Sidebar />
-      <div>{children}</div>
+      <div>
+        {children}
+      </div>
     </div>
   );
 };
