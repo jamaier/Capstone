@@ -6,7 +6,9 @@ const SidebarLogo = () => {
 
   return (
     <div
-      onClick={() => router.push("/")}>
+      onClick={() => router.push("/")}
+      className="flex items-center justify-center p-4 rounded-full cursor-pointer h-14 w-14 hover:bg-blue-300 hover:bg-opacity-10"
+    >
       <FaDev size={28} color="white" />
     </div>
   );
