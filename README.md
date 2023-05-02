@@ -33,6 +33,10 @@ this application will use the following technologies:
 		1:00 - 3:00: Figma mockup attempt
 		3:00 - 5:00: project setup
 
+	5/1 - PM work
+		8:00 - 9:00: Layout planning and mock up.
+		9:00 - 10:00: React Icons and layout components.
+
 # Notes:
 
 DB
