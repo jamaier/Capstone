@@ -37,7 +37,9 @@ const Sidebar = () => {
               icon={item.icon}
             />
           ))}
-          <SidebarItem onClick={() => {}} icon={BiLogOut} label="logOut" />
+          <div className='flex py-11'>
+            <SidebarItem onClick={() => {}} icon={BiLogOut} label="logOut" />
+          </div>
         </div>
       </div>
     </div>
