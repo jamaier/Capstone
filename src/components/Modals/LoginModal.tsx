@@ -1,16 +1,16 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import useLoginModal from "@/hooks/useLoginModal";
-import useRegisterModal from "@/hooks/useRegisterModal";
-import Modal from "../Modal";
-import Input from "@/components/Input";
+import useLoginModal from '@/hooks/useLoginModal';
+import useRegisterModal from '@/hooks/useRegisterModal';
+import Modal from '../Modal';
+import Input from '@/components/Input';
 
 const LoginModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
@@ -18,19 +18,17 @@ const LoginModal = () => {
       return;
     }
 
-    
     loginModal.onClose();
     registerModal.onOpen();
-  }, [isLoading, loginModal, registerModal])
+  }, [isLoading, loginModal, registerModal]);
 
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
       //TODO add login logic
-      
+
       loginModal.onClose();
-      
     } catch (error) {
       console.log(error);
     } finally {
@@ -57,15 +55,19 @@ const LoginModal = () => {
 
   const footerContent = (
     <div className="mt-4 text-center text-neutral-400">
-      <p>First time using twitter?
-        <span 
-          onClick={onToggle} 
+      <p>
+        First time using twitter?
+        <span
+          onClick={onToggle}
           className="text-white cursor-pointer hover:underline"
-          > Create an account</span>
+        >
+          {' '}
+          Create an account
+        </span>
       </p>
     </div>
-  )
-  
+  );
+
   return (
     <Modal
       disabled={isLoading}

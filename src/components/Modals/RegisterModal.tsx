@@ -1,19 +1,19 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import useRegisterModal from "@/hooks/useRegisterModal";
-import useLoginModal from "@/hooks/useLoginModal";
+import useRegisterModal from '@/hooks/useRegisterModal';
+import useLoginModal from '@/hooks/useLoginModal';
 
-import Modal from "../Modal";
-import Input from "@/components/Input";
+import Modal from '../Modal';
+import Input from '@/components/Input';
 
 const RegisterModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
@@ -21,19 +21,17 @@ const RegisterModal = () => {
       return;
     }
 
-    
     registerModal.onClose();
     loginModal.onOpen();
-  }, [isLoading, loginModal, registerModal])
-  
+  }, [isLoading, loginModal, registerModal]);
+
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
       //TODO add register and login logic
-      
+
       registerModal.onClose();
-      
     } catch (error) {
       console.log(error);
     } finally {
@@ -41,47 +39,50 @@ const RegisterModal = () => {
     }
   }, [loginModal]);
 
-
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Input
         disabled={isLoading}
-        placeholder="Email" 
-        value={email} 
-        onChange={(e) => setEmail(e.target.value)} 
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
-      <Input 
+      <Input
         disabled={isLoading}
-        placeholder="Name" 
-        value={name} 
-        onChange={(e) => setName(e.target.value)} 
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
-      <Input 
+      <Input
         disabled={isLoading}
-        placeholder="Username" 
-        value={username} 
+        placeholder="Username"
+        value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <Input 
+      <Input
         disabled={isLoading}
-        placeholder="Password" 
-        type="password" 
-        value={password} 
+        placeholder="Password"
+        type="password"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
     </div>
-  )
+  );
 
   const footerContent = (
     <div className="mt-4 text-center text-neutral-400">
-      <p>Already have an account?
-        <span 
-          onClick={onToggle} 
+      <p>
+        Already have an account?
+        <span
+          onClick={onToggle}
           className="text-white cursor-pointer hover:underline"
-          > Sign in</span>
+        >
+          {' '}
+          Sign in
+        </span>
       </p>
     </div>
-  )
+  );
 
   return (
     <Modal

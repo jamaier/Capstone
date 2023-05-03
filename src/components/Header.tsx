@@ -21,14 +21,14 @@ const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
       <div className="flex flex-row items-center justify-end gap-2">
         {showBackArrow && (
           <BiArrowBack
-          onClick={handleBack}
-          color="white"
-          size={20}
-          className="transition cursor-pointer hover:opacity-70"
+            onClick={handleBack}
+            color="white"
+            size={20}
+            className="transition cursor-pointer hover:opacity-70"
           />
-          )}
+        )}
         <h1 className="text-xl font-semibold text-white">{label}</h1>
-      <NewPostButton />
+        <NewPostButton />
       </div>
     </div>
   );
