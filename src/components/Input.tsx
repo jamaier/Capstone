@@ -17,6 +17,7 @@ const Input: React.FC<InputProps> = ({ placeholder, value, type = "text", onChan
         value={value}
         placeholder={placeholder}
         type={type}
+        className="w-full p-4 text-lg text-white transition bg-black border-2 rounded-md outline-none border-neutral-800 focus:border-green-500 focus:border-2 disabled:bg-neutral-900 disabled:opacity-70 disabled:cursor-not-allowed"
       />
     </div>
    );
