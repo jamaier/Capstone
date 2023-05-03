@@ -9,13 +9,13 @@ export default NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
-      name: 'Credentials',
+      name: 'credentials',
       credentials: {
         email: { label: 'Email', type: 'email', placeholder: 'Email' },
         password: { label: 'Password', type: 'password', placeholder: 'Password' }
       },
       async authorize(credentials) {
-        if (!credentials.email || !credentials?.password) {
+        if (!credentials?.email || !credentials?.password) {
           throw new Error('Please enter your email and password');
         }
 
@@ -42,7 +42,7 @@ export default NextAuth({
   debug: process.env.NODE_ENV === 'development',
   session: {
     strategy: 'jwt',
-  }
+  },
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
