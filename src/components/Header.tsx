@@ -6,7 +6,7 @@ import NewPostButton from '@/components/layout/NewPostButton';
 
 interface HeaderProps {
   showBackArrow?: boolean;
-  label: string;
+  label?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
