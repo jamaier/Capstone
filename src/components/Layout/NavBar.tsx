@@ -4,6 +4,7 @@ import { BiLogOut } from 'react-icons/bi';
 
 import SidebarItem from '@/components/layout/NavBarItem';
 import SidebarLogo from '@/components/layout/NavBarLogo';
+import NewPostButton from './NewPostButton';
 
 const Sidebar = () => {
   const items = [
