@@ -22,9 +22,9 @@ being able to interact with other users, share projects, request and offer help 
 	- User can create an account
 
 ## Stretch Goals
-
-	- Error Handling 
-  - Add Users to follow
+```
+	- Error Handling
+  	- Add Users to follow
 	- Customize Profiles
 	- Add Following tags to certain topics
 	- Have dedicated page for help requests/offers
@@ -32,7 +32,7 @@ being able to interact with other users, share projects, request and offer help 
 	- Be able to like posts
 	- Add A learning section linking to lessons based on different subjects
 	- Order certain topics based on user interaction
-
+```
 # Time Tracking
 	4/28 - 
 		8:00 - 10:00: DB handling with Prisma w/MySQL or MogoDB
@@ -46,11 +46,12 @@ being able to interact with other users, share projects, request and offer help 
 		9:00 - 10:00: React Icons and layout components.
 
 # Notes:
+```
+Research Points
 
 DB
 	- Prisma?
-  - MongoDB
-	- Firebase?
+	- MongoDB
 
 
 Look into Auth
@@ -59,6 +60,7 @@ Look into Auth
 	- Firebase
 	- supabase
 	- planetscale
+	- nextAuth
 
 Email API plans
 	- sendgrid
@@ -68,15 +70,7 @@ UI
 	- tailwind
 	- chakra
 	- material ui
-
-
-
-
-
-
-
-
-
+```
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
