@@ -5,14 +5,14 @@ import Sidebar from '@/components/layout/NavBar';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="h-screen pt-5 bg-black">
+    <div className="h-screen bg-black">
       <div className="container h-full mx-auto max-w-8xl xl:px-30">
-        <div className="grid h-full grid-cols-4">
+        <div className="grid h-full grid-cols-5">
           <Sidebar />
           <div
             className="
               col-span-3 
-              lg:col-span-2 
+              lg:col-span-3 
               border-x-[1px] 
               border-neutral-800
           "
