@@ -22,9 +22,9 @@ being able to interact with other users, share projects, request and offer help 
 	- User can create an account
 
 ## Stretch Goals
-```
+
 	- Error Handling
-  	- Add Users to follow
+ 	- Add Users to follow
 	- Customize Profiles
 	- Add Following tags to certain topics
 	- Have dedicated page for help requests/offers
@@ -32,7 +32,7 @@ being able to interact with other users, share projects, request and offer help 
 	- Be able to like posts
 	- Add A learning section linking to lessons based on different subjects
 	- Order certain topics based on user interaction
-```
+
 # Time Tracking
 	4/28 - 
 		8:00 - 10:00: DB handling with Prisma w/MySQL or MogoDB
