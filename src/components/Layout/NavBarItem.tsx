@@ -22,7 +22,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       return onClick();
     }
 
-    router.push(href)
+    router.push(href!)
   }, [router, onClick]);
 
   return (
