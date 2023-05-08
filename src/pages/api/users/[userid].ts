@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from "next";
 
 import prisma from '@/libs/prismadb';
 
@@ -34,7 +34,7 @@ export default async function handler(
     return res.status(200).json({ ...existingUser, followersCount });
   }
   catch (error) {
-    console.error(error)
-    res.status(400).end();
+    console.log(error);
+    return res.status(400).end();
   }
-}
+};
