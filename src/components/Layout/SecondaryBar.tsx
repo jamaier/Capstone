@@ -14,16 +14,15 @@ const FollowBar = () => {
         <h2 className="text-xl font-semibold text-white">
           TODO: Other users or random posts
         </h2>
-        <div className="flex gap-6 mt-4 flex-cols">
+        <div className="flex flex-col gap-6 mt-4">
           {users.map((user: Record<string, any>) => (
             <div key={user.id} className='flex flex-row gap-4'>
               <Avatar userId= {user.id} />
               <div className='flex flex-col'>
-                <p className='text-xl font-semibold text-white'>{user.username}</p>
-                <p className='text-neutral-400'>{user.email}</p>
+                <p className='text-sm font-semibold text-white'>{user.username}</p>
               </div>
             </div>
-          ))};
+          ))}
         </div>
       </div>
     </div>
