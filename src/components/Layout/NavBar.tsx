@@ -24,9 +24,9 @@ const Sidebar = () => {
       icon: BsBellFill
     },
     {
+      icon: FaUser,
       label: 'Profile',
-      href: currentUser ? `/profile/${currentUser.username}` : '/profile',
-      icon: FaUser
+      href: `/users/${currentUser?.id}`
     }
   ];
 
@@ -50,7 +50,11 @@ const Sidebar = () => {
           </div>
           <div className="absolute bottom-0 z-10 flex logout-container py-11">
             {currentUser && (
-              <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="logOut" />
+              <SidebarItem
+                onClick={() => signOut()}
+                icon={BiLogOut}
+                label="logOut"
+              />
             )}
           </div>
         </div>
