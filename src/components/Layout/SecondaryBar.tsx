@@ -7,7 +7,7 @@ const FollowBar = () => {
   if (users.length === 0) {
     return null;
   }
-  
+
   return (
     <div className="hidden px-6 py-4 lg:block">
       <div className="p-4 bg-neutral-800 rounded-xl mt-[8rem]">
@@ -16,11 +16,15 @@ const FollowBar = () => {
         </h2>
         <div className="flex flex-col gap-6 mt-4">
           {users.map((user: Record<string, any>) => (
-            <div key={user.id} className='flex flex-row gap-4'>
-              <Avatar userId= {user.id} />
-              <div className='flex flex-col'>
-                <p className='text-sm font-semibold text-white'>{user.username}</p>
-                <p className='text-sm font-semibold text-white'>Additional info maybe</p>
+            <div key={user.id} className="flex flex-row gap-4">
+              <Avatar userId={user.id} />
+              <div className="flex flex-col">
+                <p className="text-sm font-semibold text-white">
+                  {user.username}
+                </p>
+                <p className="text-sm font-semibold text-white">
+                  Additional info maybe
+                </p>
               </div>
             </div>
           ))}
