@@ -13,7 +13,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             className="
               col-span-3 
               lg:col-span-3 
-              border-x-[1px] 
+              border-x-[1px]  
               border-neutral-800
           "
           >
