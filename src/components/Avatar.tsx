@@ -53,6 +53,3 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
 };
 
 export default Avatar;
-
-
- 
