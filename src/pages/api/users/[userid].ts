@@ -29,10 +29,10 @@ export default async function handler(
           has: userId
         }
       }
-    });
+    })
 
     return res.status(200).json({ ...existingUser, followersCount });
-  } 
+  }
   
   catch (error) {
     console.log(error);
