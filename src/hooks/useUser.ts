@@ -9,12 +9,13 @@ const useUser = (userId: string) => {
     isLoading,
     mutate
   } = useSWR(userId ? `/api/users/${userId}` : null, fetcher);
+
   return {
     data,
     error,
     isLoading,
     mutate
-  };
+  }
 };
 
 export default useUser;
