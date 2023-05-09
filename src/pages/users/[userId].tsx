@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router';
 import { ClipLoader } from 'react-spinners';
 
-import Header from '@/components/Header';
 import useUser from '@/hooks/useUser';
+
+import Header from '@/components/Header';
 import UserHero from '@/components/users/UserHero';
 
 const UserView = () => {
   const router = useRouter();
-  const { userId } = useRouter().query;
+  const { userId } = router.query;
 
   const { data: fetchedUser, isLoading } = useUser(userId as string);
 
@@ -17,14 +18,14 @@ const UserView = () => {
         <ClipLoader color="lightgreen" size={80} />
       </div>
     );
-  } else {
-    return (
-      <>
-        <Header showBackArrow label={fetchedUser?.name} />
-        <UserHero userId= {userId as string} />
-      </>
-    );
   }
+
+  return (
+    <>
+      <Header showBackArrow label={fetchedUser?.name} />
+      <UserHero userId={userId as string} />
+    </>
+  );
 };
 
 export default UserView;
