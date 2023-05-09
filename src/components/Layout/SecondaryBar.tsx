@@ -10,7 +10,7 @@ const FollowBar = () => {
 
   return (
     <div className="hidden px-6 py-4 lg:block">
-      <div className="p-4 bg-neutral-800 rounded-xl mt-[8rem]">
+      <div className="p-4 bg-neutral-800 rounded-xl">
         <h2 className="text-xl font-semibold text-white">
           TODO: Other users or random posts
         </h2>
@@ -19,9 +19,7 @@ const FollowBar = () => {
             <div key={user.id} className="flex flex-row gap-4">
               <Avatar userId={user.id} />
               <div className="flex flex-col">
-                <p className="text-sm font-semibold text-white">
-                  {user.username}
-                </p>
+                <p className="text-sm font-semibold text-white">{user.name}</p>
                 <p className="text-sm font-semibold text-white">
                   Additional info maybe
                 </p>
