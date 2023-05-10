@@ -5,6 +5,7 @@ import useUser from '@/hooks/useUser';
 
 import Header from '@/components/Header';
 import UserHero from '@/components/users/UserHero';
+import UserBio from '@/components/users/UserBio';
 
 const UserView = () => {
   const router = useRouter();
@@ -24,6 +25,7 @@ const UserView = () => {
     <>
       <Header showBackArrow label={fetchedUser?.name} />
       <UserHero userId={userId as string} />
+      <UserBio userId={userId as string} />
     </>
   );
 };
