@@ -1,8 +1,6 @@
-import { get } from 'http';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { FaDove } from 'react-icons/fa';
 
 interface DropzoneProps {
   onChange: (base64: string) => void;
