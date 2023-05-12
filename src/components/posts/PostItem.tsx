@@ -87,7 +87,7 @@ export const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
               <AiOutlineMessage size={20} />
               <p>{data.comments?.length || 0}</p>
             </div>
-            <div className="flex flex-row items-center gap-2 transition cursor-pointer text-neutral-500 hover:text-green-500">
+            <div onClick={onLike} className="flex flex-row items-center gap-2 transition cursor-pointer text-neutral-500 hover:text-green-500">
               <AiOutlineHeart size={20} />
               <p>{data.comments?.length || 0}</p>
             </div>
