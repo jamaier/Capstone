@@ -10,16 +10,14 @@ import EditModal from '@/components/modals/EditModal';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <SessionProvider session={pageProps.session}>
-        <Toaster />
-        <EditModal />
-        <RegisterModal />
-        <LoginModal />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SessionProvider>
-    </>
+    <SessionProvider session={pageProps.session}>
+      <Toaster />
+      <RegisterModal />
+      <LoginModal />
+      <EditModal />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
   );
 }

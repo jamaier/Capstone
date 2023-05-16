@@ -12,4 +12,5 @@ const useEditModal = create<EditModalStore>((set) => ({
   onClose: () => set({ isOpen: false })
 }));
 
+
 export default useEditModal;

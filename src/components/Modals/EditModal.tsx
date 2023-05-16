@@ -28,11 +28,11 @@ const EditModal = () => {
     setUsername(currentUser?.username);
     setBio(currentUser?.bio);
   }, [
-      currentUser?.name,
-      currentUser?.username,
-      currentUser?.bio,
-      currentUser?.profileImage,
-      currentUser?.coverImage
+    currentUser?.name,
+    currentUser?.username,
+    currentUser?.bio,
+    currentUser?.profileImage,
+    currentUser?.coverImage
   ]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -57,54 +57,62 @@ const EditModal = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [name, username, bio, profileImage, coverImage, mutateFetchedUser, editModal]);
+  }, [
+    name,
+    username,
+    bio,
+    profileImage,
+    coverImage,
+    mutateFetchedUser,
+    editModal
+  ]);
 
   const bodyContent = (
-    <div className='flex flex-col gap-4'>
+    <div className="flex flex-col gap-4">
       <ImageUpload
         value={profileImage}
         disabled={isLoading}
         onChange={(image) => setProfileImage(image)}
-        label='Upload Profile Image'
+        label="Upload Profile Image"
       />
       <ImageUpload
         value={coverImage}
         disabled={isLoading}
         onChange={(image) => setCoverImage(image)}
-        label='Upload Cover Image'
+        label="Upload Cover Image"
       />
-      <Input 
-        placeholder='Name'
+      <Input
+        placeholder="Name"
         onChange={(e) => setName(e.target.value)}
         value={name}
         disabled={isLoading}
       />
-      <Input 
-        placeholder='Username'
+      <Input
+        placeholder="Username"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
         disabled={isLoading}
       />
-      <Input 
-        placeholder='Bio'
+      <Input
+        placeholder="Bio"
         onChange={(e) => setBio(e.target.value)}
         value={bio}
         disabled={isLoading}
       />
-    </div>      
-  )
+    </div>
+  );
 
   return (
-    <Modal 
+    <Modal
       disabled={isLoading}
       isOpen={editModal.isOpen}
       title="Edit Profile"
-      actionLabel='Save'
+      actionLabel="Save"
       onClose={editModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
     />
-  )
+  );
 };
 
 export default EditModal;
