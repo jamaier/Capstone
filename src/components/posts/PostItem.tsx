@@ -24,9 +24,10 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
       // stop propgation same-same as the Avatar component. stop forgetting this and looking it up every time, dummy
       event.stopPropagation(); // again, this is to prevent the onClick from bubbling up to the parent element
       router.push(`/users/${data.user.id}`);
+      console.log(data.user.id)
     },
     [router, data.user.id]
-  );
+    );
 
   const goToPost = useCallback(() => {
     router.push(`/posts/${data.id}`);
