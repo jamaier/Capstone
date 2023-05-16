@@ -12,7 +12,7 @@ export default async function handler(
   }
 
   try {
-    
+
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res);
       const { body } = req.body;
