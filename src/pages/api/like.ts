@@ -9,8 +9,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { postId } = req.body;
     console.log(req.body);
+    const { postId } = req.body;
 
     const { currentUser } = await serverAuth(req, res);
 
@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     if (req.method === 'DELETE') {
-      updatedLikedIds = updatedLikedIds.filter((likedId) => likedId !== currentUser.id);
+      updatedLikedIds = updatedLikedIds.filter((likedId) => likedId !== currentUser?.id);
     }
 
     const updatedPost = await prisma.post.update({
