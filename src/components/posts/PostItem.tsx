@@ -41,7 +41,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
         return loginModal.onOpen();
       }
 
-      toggleLike();
+      toggleLike(); // toggle like is not actually functioning for some reason. can like but not unlike
     },
     [loginModal, currentUser, toggleLike]
   );
