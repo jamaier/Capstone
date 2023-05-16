@@ -17,7 +17,7 @@ export default async function handler(
     const { currentUser } = await serverAuth(req, res);
 
     if (!userId || typeof userId !== "string") {
-     throw new Error("Invalid ID");
+      throw new Error("Invalid ID");
     }
 
     const user = await prisma.user.findUnique({
@@ -28,10 +28,10 @@ export default async function handler(
       throw new Error("Invalid ID");
     }
 
-    let updatedFollowingIds = [ ...(user.followingIds || [])];
+    let updatedFollowingIds = [...(user.followingIds || [])];
 
     if (req.method === "POST") {
-      updatedFollowingIds.push(userId); 
+      updatedFollowingIds.push(userId);
     }
 
     if (req.method === "DELETE") {
