@@ -6,6 +6,7 @@ import useRegisterModal from '@/hooks/useRegisterModal';
 import useLoginModal from '@/hooks/useLoginModal';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import usePosts from '@/hooks/usePosts';
+import usePost from '@/hooks/usePost';
 
 import Button from '@/components/Button';
 import Avatar from '@/components/Avatar';
@@ -19,8 +20,10 @@ interface FormProps {
 const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutatePosts } = usePosts();
+  const { mutate: mutatePost } = usePost(postId as string);
 
   const [body, setBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -29,18 +32,22 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     try {
       setIsLoading(true);
 
-      await axios.post('/api/posts', { body });
+      const url = isComment ? `/api/comments?postId=${postId}` : '/api/posts';
 
-      toast.success('Post created!');
+      await axios.post(url, { body });
+
+      toast.success('Post created');
 
       setBody('');
+
       mutatePosts();
-    } catch {
+      mutatePost();
+    } catch (error) {
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
     }
-  }, [body, mutatePosts]);
+  }, [body, mutatePosts, isComment, postId, mutatePost]);
 
   return (
     <div className="border-b-[1px] border-neutral-800 px-5 py-2">
