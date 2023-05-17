@@ -1,15 +1,15 @@
+import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import axios from 'axios';
 
-import useRegisterModal from '@/hooks/useRegisterModal';
 import useLoginModal from '@/hooks/useLoginModal';
+import useRegisterModal from '@/hooks/useRegisterModal';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import usePosts from '@/hooks/usePosts';
 import usePost from '@/hooks/usePost';
 
-import Button from '@/components/Button';
-import Avatar from '@/components/Avatar';
+import Avatar from './Avatar';
+import Button from './Button';
 
 interface FormProps {
   placeholder: string;
@@ -61,7 +61,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               disabled={isLoading}
               onChange={(e) => setBody(e.target.value)}
               value={body}
-              className="w-full mt-3 bg-black outline-none resize-none disabled:opacity-80 peer ring-0 text-[20px] placeholder:neutral-500 text-white"
+              className="disabled:opacity-80 peer resize-none mt-3 w-full bg-black ring-0 outline-none text-[20px] placeholder-neutral-500 text-white"
               placeholder={placeholder}
             ></textarea>
             <hr className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition" />
