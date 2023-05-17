@@ -1,14 +1,14 @@
+import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import axios from 'axios';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
 import useEditModal from '@/hooks/useEditModal';
 import useUser from '@/hooks/useUser';
 
-import ImageUpload from '@/components/ImageUpload';
-import Modal from '@/components/Modal';
-import Input from '@/components/Input';
+import Input from '../Input';
+import Modal from '../Modal';
+import ImageUpload from '../ImageUpload';
 
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
@@ -40,6 +40,7 @@ const EditModal = () => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
+
       await axios.patch('/api/edit', {
         name,
         username,
@@ -49,22 +50,22 @@ const EditModal = () => {
       });
       mutateFetchedUser();
 
-      toast.success('Profile updated!');
+      toast.success('Updated');
 
       editModal.onClose();
-    } catch {
-      toast.error('Something went wrong!');
+    } catch (error) {
+      toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
     }
   }, [
+    editModal,
     name,
     username,
     bio,
-    profileImage,
-    coverImage,
     mutateFetchedUser,
-    editModal
+    profileImage,
+    coverImage
   ]);
 
   const bodyContent = (
@@ -73,13 +74,13 @@ const EditModal = () => {
         value={profileImage}
         disabled={isLoading}
         onChange={(image) => setProfileImage(image)}
-        label="Upload Profile Image"
+        label="Upload profile image"
       />
       <ImageUpload
         value={coverImage}
         disabled={isLoading}
         onChange={(image) => setCoverImage(image)}
-        label="Upload Cover Image"
+        label="Upload cover image"
       />
       <Input
         placeholder="Name"
@@ -106,7 +107,7 @@ const EditModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={editModal.isOpen}
-      title="Edit Profile"
+      title="Edit your profile"
       actionLabel="Save"
       onClose={editModal.onClose}
       onSubmit={onSubmit}
