@@ -14,6 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { currentUser } = await serverAuth(req, res);
 
     if (!postId || typeof postId !== 'string') {
+      console.log(typeof postId, postId)
       throw new Error('Invalid ID');
     }
 
