@@ -9,7 +9,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    console.log(req.body);
     const { postId } = req.body;
 
     const { currentUser } = await serverAuth(req, res);
@@ -40,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             id: postId,
           }
         });
-    
+
         if (post?.userId) {
           await prisma.notification.create({
             data: {
@@ -48,7 +47,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               userId: post.userId
             }
           });
-    
+
           await prisma.user.update({
             where: {
               id: post.userId
@@ -58,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             }
           });
         }
-      } catch(error) {
+      } catch (error) {
         console.log(error);
       }
       // NOTIFICATION PART END
