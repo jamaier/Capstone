@@ -1,5 +1,6 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useNotifications from "@/hooks/useNotifications";
+import { FaDev } from "react-icons/fa";
 
 import { useEffect } from "react";
 
@@ -20,8 +21,17 @@ const NotificationsFeed = () => {
   }
 
   return (
-    <div>NotificationsFeed</div>
+    <div className="flex flex-col">
+      {fetchedNotifications.map((notification: Record<string, any>) => (
+        <div className="flex flex-row items-center gap-4 p-6 border-b-[1px] border-neutral-800">
+          <FaDev color='white' size={32} />
+          <p className="text-white">
+            {notification.body}
+          </p>
+        </div>
+      ))}
+    </div>
   )
 }
 
-export default NotificationsFeed
+export default NotificationsFeed;
