@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import useUser from '@/hooks/useUser';
+
 import Avatar from '../Avatar';
 
 interface UserHeroProps {
@@ -21,9 +22,7 @@ const UserHero: React.FC<UserHeroProps> = ({ userId }) => {
             style={{ objectFit: 'cover' }}
           />
         )}
-        <div className="absolute -bottom-16 left-4">
-          {' '}
-          {/* // (-)bottom appends to override the default bottom value   */}
+        <div className="absolute -bottom-16 left-4"> {/* // (-)bottom appends to override the default bottom value   */}
           <Avatar userId={userId} isLarge hasBorder />
         </div>
       </div>

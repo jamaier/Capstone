@@ -58,13 +58,33 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
           </div>
           <div className="w-full">
             <textarea
+              className="
+                disabled:opacity-80
+                peer
+                resize-none 
+                mt-3 
+                w-full 
+                bg-black 
+                ring-0 
+                outline-none 
+                text-[20px] 
+                placeholder-neutral-500 
+                text-white
+              "
               disabled={isLoading}
-              onChange={(e) => setBody(e.target.value)}
+              onChange={(event) => setBody(event.target.value)}
               value={body}
-              className="disabled:opacity-80 peer resize-none mt-3 w-full bg-black ring-0 outline-none text-[20px] placeholder-neutral-500 text-white"
               placeholder={placeholder}
             ></textarea>
-            <hr className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition" />
+            <hr
+              className="
+                opacity-0 
+                peer-focus:opacity-100 
+                h-[1px] 
+                w-full 
+                border-neutral-800 
+                transition"
+            />
             <div className="flex flex-row justify-end mt-4">
               <Button
                 disabled={isLoading || !body}
