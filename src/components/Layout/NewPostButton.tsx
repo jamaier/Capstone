@@ -1,9 +1,9 @@
-import { useCallback } from "react";
-import { SiStarship } from "react-icons/si";
-import { useRouter } from "next/router";
+import { useCallback } from 'react';
+import { SiStarship } from 'react-icons/si';
+import { useRouter } from 'next/router';
 
-import useLoginModal from "@/hooks/useLoginModal";
-import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModal from '@/hooks/useLoginModal';
+import useCurrentUser from '@/hooks/useCurrentUser';
 
 const NewPostButton = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const NewPostButton = () => {
         <SiStarship size={24} color="white" />
       </div>
       <div className="hidden px-4 py-2 mt-6 bg-green-500 rounded-full cursor-pointer lg:block hover:bg-opacity-90">
-        <p 
+        <p
           className="
             hidden 
             lg:block 
@@ -32,7 +32,8 @@ const NewPostButton = () => {
             font-semibold
             text-white 
             text-[20px]
-        ">
+        "
+        >
           New Post
         </p>
       </div>
