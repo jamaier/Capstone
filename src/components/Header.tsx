@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
-import NewPostButton from './layout/NewPostButton';
+import NewPostButton from './NewPostButton';
 
 interface HeaderProps {
   showBackArrow?: boolean;
