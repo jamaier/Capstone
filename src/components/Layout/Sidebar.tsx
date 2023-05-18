@@ -33,34 +33,27 @@ const Sidebar = () => {
   ];
 
   return (
-    <div
-      className="relative h-full col-span-1 pr-4 md:pr-6"
-      style={{ minHeight: '100vh' }}
-    >
-      <div className="flex flex-col items-end">
-        <div className="space-y-2 lg:w-[175px]">
+    <div className="w-full pl-11 border-y">
+      <div className="flex flex-row items-center justify-center">
+        <div className='mx-10'>
           <SidebarLogo />
-          <div className="pt-10">
-            {items.map((item) => (
-              <SidebarItem
-                key={item.href}
-                href={item.href}
-                label={item.label}
-                icon={item.icon}
-                alert={item.alert}
-              />
-            ))}
-          </div>
-          <div className="absolute bottom-0 z-10 flex logout-container py-11">
-            {currentUser && (
-              <SidebarItem
-                onClick={() => signOut()}
-                icon={BiLogOut}
-                label="logOut"
-              />
-            )}
-          </div>
         </div>
+        {items.map((item) => (
+          <SidebarItem
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            alert={item.alert}
+            />
+        ))}
+        {currentUser && (
+          <SidebarItem
+            onClick={() => signOut()}
+            icon={BiLogOut}
+            label="logOut"
+          />
+        )}
       </div>
     </div>
   );
