@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { FaDev } from 'react-icons/fa'; //TODO - replace with custom logo
+import { SiStarship } from 'react-icons/si'; //TODO - replace with custom logo
 
 const SidebarLogo = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const SidebarLogo = () => {
       onClick={() => router.push('/')}
       className="flex items-center justify-center p-4 rounded-full cursor-pointer h-14 w-14 hover:bg-green-300 hover:bg-opacity-60"
     >
-      <FaDev size={28} color="white" />
+      <SiStarship size={28} color="white" />
     </div>
   );
 };
