@@ -56,34 +56,16 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
           <div>
             <Avatar userId={currentUser?.id} />
           </div>
-          <div className="w-full">
+          <div className="w-full rounded">
             <textarea
-              className="
-                disabled:opacity-80
-                peer
-                resize-none 
-                mt-3 
-                w-full 
-                bg-black 
-                ring-0 
-                outline-none 
-                text-[20px] 
-                placeholder-neutral-500 
-                text-white
-              "
+              className="disabled:opacity-80 peer resize-none mt-3 w-full bg-neutral-950 ring-0 outline-none text-[20px] placeholder-neutral-500 text-white rounded-md pl-2 pt-2"
               disabled={isLoading}
               onChange={(event) => setBody(event.target.value)}
               value={body}
               placeholder={placeholder}
             ></textarea>
             <hr
-              className="
-                opacity-0 
-                peer-focus:opacity-100 
-                h-[1px] 
-                w-full 
-                border-neutral-800 
-                transition"
+              className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition"
             />
             <div className="flex flex-row justify-end mt-4">
               <Button
