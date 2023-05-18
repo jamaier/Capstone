@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
         </div>
         <div className="flex items-center">
           <div className="flex items-center justify-center">
-            <NewPostButton />
+            <NewPostButton /> 
           </div>
         </div>
       </div>
