@@ -1,10 +1,16 @@
 import useUsers from '@/hooks/useUsers';
+import useCurrentUser from '@/hooks/useCurrentUser';
 
 import Avatar from '../Avatar';
 
 const FollowBar = () => {
   const { data: users = [] } = useUsers();
+  const { data: currentUser } = useCurrentUser();
 
+  if (!currentUser) {
+    return null;
+  }
+  
   if (users.length === 0) {
     return null;
   }
