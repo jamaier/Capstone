@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
-import NewPostButton from './NewPostButton';
+// import NewPostButton from './NewPostButton';
 
 interface HeaderProps {
   showBackArrow?: boolean;
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
         </div>
         <div className="flex items-center">
           <div className="flex items-center justify-center">
-            <NewPostButton /> 
+            {/* <NewPostButton />  */}
           </div>
         </div>
       </div>
