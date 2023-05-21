@@ -1,13 +1,13 @@
-import { useRouter } from 'next/router';
-import { useCallback, useMemo } from 'react';
-import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai';
-import { formatDistanceToNowStrict } from 'date-fns';
+import { useRouter } from "next/router";
+import { useCallback, useMemo } from "react";
+import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
+import { formatDistanceToNowStrict } from "date-fns";
 
-import useLoginModal from '@/hooks/useLoginModal';
-import useCurrentUser from '@/hooks/useCurrentUser';
-import useLike from '@/hooks/useLike';
+import useLoginModal from "@/hooks/useLoginModal";
+import useCurrentUser from "@/hooks/useCurrentUser";
+import useLike from "@/hooks/useLike";
 
-import Avatar from '../Avatar';
+import Avatar from "../Avatar";
 interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
@@ -22,7 +22,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
 
   const goToUser = useCallback(
     (event: any) => {
-      // stop propgation same-same as the Avatar component. stop forgetting this and looking it up every time, dummy
+      // stop propagation same-same as the Avatar component. stop forgetting this and looking it up every time, dummy
       event.stopPropagation(); // again, this is to prevent the onClick from bubbling up to the parent element
       router.push(`/users/${data.user.id}`);
     },
@@ -69,7 +69,10 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
       "
     >
       <div className="flex flex-row items-start gap-3">
-        <Avatar userId={data.user.id} />
+        <div> 
+          {/* temp div to fix avatar scrunching on larger posts */}
+          <Avatar userId={data.user.id} />
+        </div>
         <div>
           <div className="flex flex-row items-center gap-2">
             <p
@@ -96,7 +99,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
               onClick={onLike}
               className="flex flex-row items-center gap-2 transition cursor-pointer text-neutral-500 hover:text-red-500"
             >
-              <LikeIcon color={hasLiked ? 'red' : ''} size={20} />
+              <LikeIcon color={hasLiked ? "red" : ""} size={20} />
               <p>{data.likedIds.length}</p>
             </div>
           </div>
