@@ -28,7 +28,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ userId }) => {
       ))}
 
       {/* Pagination controls */}
-      <div className="flex pl-2 mt-4 space-x-2">
+      <div className="flex justify-center pl-2 my-2 space-x-2">
         {Array.from({ length: Math.ceil(posts.length / postsPerPage) }).map((_, index) => (
           <button
             key={index}
