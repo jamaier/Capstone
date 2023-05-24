@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import usePosts from '@/hooks/usePosts';
-
-import PostItem from './PostItem';
+import { useState } from "react";
+import usePosts from "@/hooks/usePosts";
+import PostItem from "./PostItem";
 
 interface PostFeedProps {
   userId?: string;
@@ -29,19 +28,21 @@ const PostFeed: React.FC<PostFeedProps> = ({ userId }) => {
 
       {/* Pagination controls */}
       <div className="flex justify-center pl-2 my-2 space-x-2">
-        {Array.from({ length: Math.ceil(posts.length / postsPerPage) }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 rounded-full ${
-              currentPage === index + 1
-                ? 'bg-green-500 text-white'
-                : 'bg-white text-black'
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
+        {Array.from({ length: Math.ceil(posts.length / postsPerPage) }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-4 py-2 rounded-full ${
+                currentPage === index + 1
+                  ? "bg-green-500 text-white"
+                  : "bg-white text-black"
+              }`}
+            >
+              {index + 1}
+            </button>
+          )
+        )}
       </div>
     </>
   );

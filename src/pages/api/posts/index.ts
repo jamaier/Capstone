@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { getPaginationOptions } from "@/libs/pagination";
+
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
@@ -27,9 +29,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     if (req.method === 'GET') {
-      const { userId } = req.query;
-
-      console.log({ userId })
+      const { userId, page = 1 } = req.query;
+      const itemsPerPage = 10;
+      const { skip, take } = getPaginationOptions(Number(page), itemsPerPage);
 
       let posts;
 
@@ -45,6 +47,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           orderBy: {
             createdAt: 'desc'
           },
+          skip,
+          take
         });
       } else {
         posts = await prisma.post.findMany({
@@ -54,7 +58,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
           orderBy: {
             createdAt: 'desc'
-          }
+          },
+          skip,
+          take
         });
       }
 
